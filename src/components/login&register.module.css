@@ -1,0 +1,15 @@
+a{
+    color: blue;
+}
+a:hover{
+    text-decoration: underline;
+}
+.errorRegister{
+    align-items: center;
+    justify-content: center;
+    color: red;
+}
+.bordring{
+    background-color: yellow;
+}
+

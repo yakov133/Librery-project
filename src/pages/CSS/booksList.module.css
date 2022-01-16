@@ -1,0 +1,25 @@
+.img_Booklist{
+    width: 400px;
+    height: 500px;
+}
+.btn_Booklist:hover{
+    font-size: 25px;
+    margin: 1px;
+}
+.copmlet{
+}
+.copmlet:hover{
+    color: rgb(21, 181, 12);
+    font-size: 25px;
+    margin: 1px;
+}
+.delete{
+    
+    
+}
+.delete:hover{
+    color: red;
+    font-size: 25px;
+    margin: 1px;
+}
+.stam{}
