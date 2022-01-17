@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { HashLoader } from "react-spinners";
-
+import style from "./CSS/modal.module.css"
 const Login = ({ newLogin }) => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [error, seterror] = useState(false);
   const [spiner, setSpiner] = useState(false);
-
+  document.body.backgroundColor = "orange"
   const handelSubmit = (e) => {
     setSpiner(true);
     e.preventDefault();
@@ -35,6 +35,7 @@ const Login = ({ newLogin }) => {
           } else {
             localStorage.setItem("auth", JSON.stringify(data));
             newLogin();
+            
           }
         }, 2000);
       })
@@ -48,7 +49,7 @@ const Login = ({ newLogin }) => {
   };
 
   return (
-    <div>
+    <div className={style.centerAll}>
       <h1>Sign In </h1>
       <form onSubmit={handelSubmit}>
         <label htmlFor="email">Email:</label>

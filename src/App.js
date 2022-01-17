@@ -16,7 +16,7 @@ function App() {
   const [readinglist, setreadinglist] = useState([]);
   const [completedlist, setcompletedlist] = useState([]);
   const [details, setdetails] = useState("");
-  
+  let stopInterval;
   useEffect(() => {
     if (localStorage.getItem("auth")) {
       newLogin();
@@ -35,7 +35,18 @@ function App() {
     .then(res => res.json())
     .then(data => setbookslist(data.books))   
     .catch(err=>console.log(err))
-    
+    stopInterval = setTimeout(()=>{
+      exit();
+    },20000)
+  };
+  const exit = () => {
+    setuserIsLogedIn(false);
+    setbookslist([]);
+    setreadinglist([]);
+    setcompletedlist([]);
+    setdetails("");
+    localStorage.clear();
+    clearInterval(stopInterval);
   };
 
   return (
@@ -56,7 +67,7 @@ function App() {
               <Link to={"/CompletedList"} className="nav-space">
                 CompletedList
               </Link>
-              <SignOut setuserIsLogedIn={setuserIsLogedIn} setbookslist={setbookslist} setreadinglist={setreadinglist} setcompletedlist={setcompletedlist} setdetails={setdetails}/>
+              <SignOut exit={exit} setuserIsLogedIn={setuserIsLogedIn} setbookslist={setbookslist} setreadinglist={setreadinglist} setcompletedlist={setcompletedlist} setdetails={setdetails}/>
           </div>
         <Switch>
           <Route exact path="/" render={() => <BooksList bookslist={bookslist} setbookslist={setbookslist} readinglist={readinglist} setreadinglist={setreadinglist} completedlist={completedlist} setcompletedlist={setcompletedlist}/>} />

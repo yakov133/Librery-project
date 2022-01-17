@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import * as style from "../components/CSS/login&register.module.css"
-import "./login&register.module.css";
+import style from "./CSS/login&register.module.css";
 import { HashLoader } from "react-spinners";
 
 const Register = ({ newLogin }) => {
@@ -63,7 +63,7 @@ const Register = ({ newLogin }) => {
   };
 
   return (
-    <div className="center">
+    <div className={style.center}>
       <h1>Register </h1>
       <form onSubmit={handelSubmit}>
         <label htmlFor="email">Email:</label>

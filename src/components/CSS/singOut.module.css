@@ -1,0 +1,7 @@
+.btn{
+color: orange;
+}
+.btn:hover{
+    font-size: 25px;
+    margin: 1px;
+}

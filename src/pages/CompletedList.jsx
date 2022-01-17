@@ -109,7 +109,7 @@ const CompletedList = ({bookslist,setbookslist,readinglist,setreadinglist,comple
         <div>
             <h1>Completed List</h1>
             <div>
-            {array.map((book,i)=>{return <div key={i} >
+            {array.map((book,i)=>{return <div key={i} className={style.borderDiv}>
                     <div>
                         <StarRating bookslist={bookslist} setbookslist={setbookslist} ID={book.ID}/>
                         <button className={style.copmlet} onClick={()=>MoveToReadindList(book.ID)} title="Mark has Unread"><RiArrowGoBackFill/></button>

@@ -1,16 +1,10 @@
-const SignOut = ({ setuserIsLogedIn,setbookslist,setreadinglist,setcompletedlist,setdetails }) => {
-  const exit = () => {
-    setuserIsLogedIn(false);
-    setbookslist([]);
-    setreadinglist([]);
-    setcompletedlist([]);
-    setdetails("");
-    localStorage.clear();
-  };
+import { FaSignOutAlt } from "react-icons/fa";
+import style from './CSS/singOut.module.css'
+const SignOut = ({exit, setuserIsLogedIn,setbookslist,setreadinglist,setcompletedlist,setdetails }) => {
 
   return (
     <div>
-      <button onClick={exit}>Sign Out</button>
+      <button className={style.btn} onClick={()=>exit()}><FaSignOutAlt/></button>
     </div>
   );
 };

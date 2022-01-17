@@ -100,7 +100,7 @@ const RemoveFromList = (ID)=>{
             <h1>Reading List</h1>
             
             <div>
-            {array.map((book,i)=>{return <div key={i} >
+            {array.map((book,i)=>{return <div key={i} className={style.borderDiv}>
                     <div>
                         <button className={style.copmlet} onClick={()=>MoveToComplited(book.ID)} title="Mark has read"><ImCheckboxChecked/></button>
                         <button className={style.delete} onClick={()=>RemoveFromList(book.ID)} title="remove from reading list"><RiDeleteBin2Fill/></button>

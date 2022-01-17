@@ -108,10 +108,10 @@ const SearchFristTen =(e)=>{
     return(
         <div>
             <h1>Books List</h1>
-            <div className="borderDiv">
+            <div >
             <input type="text" onChange={SearchFristTen} placeholder="...Search" />
                 <div>
-                {array.length?array.map((book,i)=>{return <div key={i}>
+                {array.length?array.map((book,i)=>{return <div key={i} className={style.borderDiv}>
                     {array[i].flagPlus?<div>
                         <button className={style.btn_Booklist} onClick={()=>MoveToComplited(book.ID)} title="Mark has read"><FcCheckmark/></button>
                         <button className={style.btn_Booklist} onClick={()=>removeFromReadingList(book.ID,i)} title="Remove From List"><FcDislike/></button>
