@@ -17,6 +17,7 @@ function App() {
   const [completedlist, setcompletedlist] = useState([]);
   const [details, setdetails] = useState("");
   let stopInterval;
+
   useEffect(() => {
     if (localStorage.getItem("auth")) {
       newLogin();
@@ -25,7 +26,6 @@ function App() {
     .then(res => res.json())
     .then(data => setbookslist(data.books))   
     .catch(err=>console.log(err))
-    
   },[]);
   
 
@@ -37,7 +37,7 @@ function App() {
     .catch(err=>console.log(err))
     stopInterval = setTimeout(()=>{
       exit();
-    },20000)
+    },120000)
   };
   const exit = () => {
     setuserIsLogedIn(false);
