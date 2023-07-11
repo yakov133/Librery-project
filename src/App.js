@@ -37,7 +37,7 @@ function App() {
     .catch(err=>console.log(err))
     stopInterval = setTimeout(()=>{
       exit();
-    },120000)
+    },20000)
   };
   const exit = () => {
     setuserIsLogedIn(false);
